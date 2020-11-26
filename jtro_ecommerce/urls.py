@@ -34,10 +34,12 @@ urlpatterns = [
     path('', include('search.urls')),
     path('', include('category.urls')),
     path('', include('tags.urls')),
-    path('', include('company_profile.urls')),
     path('profiles/', RedirectView.as_view(url='/profile')),
     path('profile/', include('profiles.urls'), name='profile'),
 
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('hitcount/', include(('hitcount.urls', 'hitcount'), namespace='hitcount')),
 ]
 
 if settings.DEBUG:

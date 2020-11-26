@@ -41,7 +41,10 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'widget_tweaks'
+    'widget_tweaks',
+    'ckeditor',
+    'ckeditor_uploader',
+    'hitcount'
 ]
 
 LOCAL_APPS = [
@@ -50,7 +53,6 @@ LOCAL_APPS = [
     'about',
     'blog',
     'category',
-    'company_profile',
     'contact',
     'products',
     'profiles',
@@ -180,3 +182,16 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 PROTECTED_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "protected_media")
+
+
+# CkEditor Upload path
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+# CkEditor Custom Configuration
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'width': 680,
+        'extraPlugins': ','.join(['codesnippet']),
+    },
+}

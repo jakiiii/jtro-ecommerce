@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import UserMessage, Address
 
-# Register your models here.
+
+@admin.register(Address)
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ['office_address', 'phone', 'email']
+
+
+@admin.register(UserMessage)
+class UserMessageAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'email', 'timestamp']

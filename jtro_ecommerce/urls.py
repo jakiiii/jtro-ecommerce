@@ -26,7 +26,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('accounts/', RedirectView.as_view(url='/account')),
-    path('account/', include('accounts.urls'), name='account')
+    path('account/', include('accounts.urls'), name='account'),
+    path('about/', include('about.urls')),
+    path('blog/', include('blog.urls')),
+    path('contact/', include('contact.urls')),
+    path('products/', include('products.urls')),
+    path('', include('search.urls')),
+    path('', include('category.urls')),
+    path('', include('tags.urls')),
+    path('', include('company_profile.urls')),
+    path('profiles/', RedirectView.as_view(url='/profile')),
+    path('profile/', include('profiles.urls'), name='profile'),
+
 ]
 
 if settings.DEBUG:

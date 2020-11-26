@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!-- inner banner -->
+    <div class="ibanner_w3 pt-sm-5 pt-3">
+        <h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
+            <span>j</span>Tro
+            <span>M</span>oon</h4>
+    </div>
+    <!-- //inner banner -->
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+    <section class="single_blog_wthree py-5">
+        <div class="container">
+            <h5 class="head_agileinfo text-center text-capitalize pb-5">
+                <span>j</span> Tro</h5>
+            <div class="single-page-agile-info">
+                <!-- /movie-browse-agile -->
+                <div class="row show-top-grids">
+                    <div class="col-md-8 single-left">
+                        <div class="row card-columns">
+                            {% for context in blog_content %}
+                            <div class="col-md-5 p-0">
+                                <div class="card">
+                                    <a href="single.html">
+                                        <img class="card-img-top" src="{% static 'images/blg1.jpg' %}" alt="Card image cap">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title blg_w3ls">
+                                            <a href="single.html">{{ context.title }}</a>
+                                        </h5>
+                                        <p class="card-text">{{ context.content|truncatechars:250|safe }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Search Widget -->
+                        <div class="card mb-4">
+                            <h5 class="card-header">Search</h5>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Categories Widget -->
+                        <div class="card my-4">
+                            <h5 class="card-header">Categories</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <ul class="w3-tag2">
+                                        <li>
+                                            <a href="shop.html">amet</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">placerat</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">Proin </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">vehicula</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">vehicula</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">diam</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">amet</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">placerat</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">Proin </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">vehicula</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">vehicula</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">velit</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop.html">felis</a>
+                                        </li>
+                                        <li>
+                                            <a href="comedy.html">mauris</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Side Widget -->
+                        <div class="card my-4">
+                            <h5 class="card-header">Side Widget</h5>
+                            <div class="card-body">
+                                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor
+                                eget felis porttitor volutpat. Proin
+                                eget tortor risus.Curabitur non nulla sit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //blog-->
+{% endblock %}
+
+
+<div class="col-md-4">
+    <!-- Search Widget -->
+    <div class="card mb-4">
+        <h5 class="card-header">Search</h5>
+        <div class="card-body">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button">Go!</button>
+                                    </span>
+            </div>
+        </div>
+    </div>
+    <!-- Categories Widget -->
+    <div class="card my-4">
+        <h5 class="card-header">Categories</h5>
+        <div class="card-body">
+            <div class="row">
+                <ul class="w3-tag2">
+                    <li>
+                        <a href="shop.html">amet</a>
+                    </li>
+                    <li>
+                        <a href="#">placerat</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Proin </a>
+                    </li>
+                    <li>
+                        <a href="#">vehicula</a>
+                    </li>
+                    <li>
+                        <a href="#">vehicula</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">diam</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">amet</a>
+                    </li>
+                    <li>
+                        <a href="#">placerat</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">Proin </a>
+                    </li>
+                    <li>
+                        <a href="#">vehicula</a>
+                    </li>
+                    <li>
+                        <a href="#">vehicula</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">velit</a>
+                    </li>
+                    <li>
+                        <a href="shop.html">felis</a>
+                    </li>
+                    <li>
+                        <a href="comedy.html">mauris</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Side Widget -->
+    <div class="card my-4">
+        <h5 class="card-header">Side Widget</h5>
+        <div class="card-body">
+            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor
+            volutpat. Proin
+            eget tortor risus.Curabitur non nulla sit.
+        </div>
+    </div>
+</div>

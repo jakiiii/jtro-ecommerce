@@ -28,7 +28,7 @@ urlpatterns = [
     path('accounts/', RedirectView.as_view(url='/account')),
     path('account/', include('accounts.urls'), name='account'),
     path('about/', include('about.urls')),
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('products/', include('products.urls')),
     path('', include('search.urls')),

@@ -13,7 +13,7 @@ class BlogCoverAdmin(admin.ModelAdmin):
 
 @admin.register(BlogCategory)
 class BlogCategoryAdmin(admin.ModelAdmin):
-    list_display = ['category_name', 'timestamp']
+    list_display = ['blog_category_name', 'timestamp']
 
 
 @admin.register(BlogPost)

@@ -36,6 +36,7 @@ urlpatterns = [
     path('', include('tags.urls')),
     path('profiles/', RedirectView.as_view(url='/profile')),
     path('profile/', include('profiles.urls'), name='profile'),
+    path('', include('webprofile.urls')),
 
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),

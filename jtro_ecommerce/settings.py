@@ -58,6 +58,7 @@ LOCAL_APPS = [
     'profiles',
     'search',
     'tags',
+    'webprofile',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS

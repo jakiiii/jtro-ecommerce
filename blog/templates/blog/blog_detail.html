@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load hitcount_tags %}
 {% block title %}{{ title }} || {{ block.super }}{% endblock title %}
 
 
@@ -35,7 +36,8 @@
                                 <h5 class="card-title font-weight-bold">{{ object.title }}</h5>
                                 <p class="card-text">{{ object.content|safe }}</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated {{ object.get_timestamp }} mins ago</small>
+                                    <small class="text-muted">Last updated {{ object.get_timestamp }} mins ago</small><br/>
+                                    <small class="text-muted">Viewed: {% get_hit_count for object %}</small>
                                 </p>
                             </div>
                         </div>

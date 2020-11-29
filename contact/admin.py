@@ -4,7 +4,7 @@ from .models import UserMessage, Address
 
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
-    list_display = ['office_address', 'phone', 'email']
+    list_display = ['office_address', 'phone', 'email', 'active']
 
 
 @admin.register(UserMessage)

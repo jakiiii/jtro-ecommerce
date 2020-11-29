@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
 
+from hitcount.views import HitCountDetailView
+
 from .models import BlogPost, BlogCategory
 
 
@@ -17,14 +19,16 @@ class BlogHomeView(ListView):
         return context
 
 
-class BlogDetailView(DetailView):
+class BlogDetailView(HitCountDetailView):
     model = BlogPost
     template_name = 'blog/blog_detail.html'
+    count_hit = True
 
     def get_context_data(self, *args, **kwargs):
         context = super(BlogDetailView, self).get_context_data(*args, **kwargs)
         context['title'] = '{}'.format(self.get_object().title)
         context['blog_category_context'] = BlogPost.objects.all()  # .distinct('category')
+        context.update({'popular_objects': BlogPost.objects.order_by('-hit_count_generic__hits')[:3], })
         return context
 
 

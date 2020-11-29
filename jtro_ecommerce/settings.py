@@ -192,7 +192,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
-        'width': 680,
+        'width': '100%',
         'extraPlugins': ','.join(['codesnippet']),
     },
 }

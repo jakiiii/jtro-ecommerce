@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} || {{ block.super }}{% endblock title %}
+
+
+{% block content %}
+    <!-- inner banner -->
+    <div class="ibanner_w3 pt-sm-5 pt-3">
+        <h4 class="head_agileinfo text-center text-capitalize text-center pt-5">
+            <span>j</span>Tro
+            <span>M</span>oon</h4>
+    </div>
+    <!-- //inner banner -->
+    <!-- //inner banner -->
+    <!-- breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol>
+    </nav>
+    <!-- //breadcrumbs -->
+    <!--services-->
+    <div class="container pb-5">
+        <h1>ABOUT</h1>
+    </div>
+    <!-- //services-->
+{% endblock %}

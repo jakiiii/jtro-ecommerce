@@ -1,0 +1,14 @@
+<div class="card my-4">
+    <h5 class="card-header">Categories</h5>
+    <div class="card-body">
+        <div class="row">
+            <ul class="w3-tag2">
+                {% for context in blog_category_context %}
+                <li>
+                    <a href="{{ context.category_name.get_absolute_category_url }}">{{ context.category_name }} ({{ context.category_name.blog_category.all.count }})</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

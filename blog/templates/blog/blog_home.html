@@ -30,23 +30,39 @@
                 <!-- /movie-browse-agile -->
                 <div class="row show-top-grids">
                     <div class="col-md-8 single-left">
+                    <h3 class="h3">Latest Post</h3><hr/>
                         <div class="row card-columns">
                             {% for context in blog_content %}
-                            <div class="col-md-5 p-0">
-                                <div class="card">
-                                    <a href="{{ context.get_absolute_url }}">
-                                        <img class="card-img-top" src="{{ context.image.url }}" alt="Card image cap">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title blg_w3ls">
-                                            <a href="{{ context.get_absolute_url }}">{{ context.title }}</a>
-                                        </h5>
-{#                                        <p class="card-text">{{ context.content|truncatechars:250|safe }}</p>#}
+                                <div class="col-md-5 p-0">
+                                    <div class="card">
+                                        <a href="{{ context.get_absolute_url }}">
+                                            <img class="card-img-top" src="{{ context.image.url }}" alt="Card image cap"
+                                                 style="width: 316px; height: 158px;">
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title blg_w3ls">
+                                                <a href="{{ context.get_absolute_url }}">{{ context.title }}</a>
+                                            </h5>
+                                            {#                                        <p class="card-text">{{ context.content|truncatechars:250|safe }}</p>#}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             {% endfor %}
+                            <!-- pagination -->
+                            {% include 'blog/snippets/pagination.html' %}
+                            <!-- // pagination -->
                         </div>
+
+                        <!-- featured post -->
+                        <h3 class="h3">Featured Post</h3><hr/>
+                        {% include 'blog/snippets/featured_post.html' %}
+                        <!-- // featured post -->
+
+                        <!-- popular blog post -->
+                        <h3 class="h3">Popular Post</h3><hr/>
+                        {% include 'blog/snippets/popular_blog.html' %}
+                        <!-- // popular blog post -->
+
                     </div>
                     <div class="col-md-4">
                         <!-- Search Widget -->

@@ -28,6 +28,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# SMTP GMAIL Settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pakijadjangoproject@gmail.com'
+EMAIL_HOST_PASSWORD = 'a$$4u1tpakija'
+EMAIL_PORT = 587  # 465 (SSL required) or 587 (TLS required)
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Account Activation Email | jTro'
+BASE_URL = '127.0.0.1:8000'  # 'jgrayspaceit.herokuapp.com'
+
+MANAGERS = [
+    ('jTro', 'pakijadjangoproject@gmail.com'),
+]
+
+ADMINS = MANAGERS
 
 # Application definition
 
@@ -62,6 +76,15 @@ LOCAL_APPS = [
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
+
+# Custom User Auth
+AUTH_USER_MODEL = 'accounts.User'
+
+# Login and Logout
+LOGIN_URL = '/account/login/'
+LOGIN_URL_REDIRECT = '/'
+LOGOUT_URL = '/logout/'
+LOGOUT_URL_REDIRECT = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

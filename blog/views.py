@@ -7,7 +7,7 @@ from .models import BlogPost, BlogCategory
 
 
 class BlogHomeView(ListView):
-    paginate_by = 10
+    paginate_by = 4
     model = BlogPost
     template_name = 'blog/blog_home.html'
     context_object_name = 'blog_content'
@@ -15,6 +15,8 @@ class BlogHomeView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(BlogHomeView, self).get_context_data(*args, **kwargs)
         context['blog_category_context'] = BlogPost.objects.all().distinct()
+        context['blog_featured'] = BlogPost.objects.featured()[:4]
+        context.update({'popular_objects': BlogPost.objects.order_by('-hit_count_generic__hits')[:4], })
         context['title'] = 'Blog'
         return context
 
@@ -28,7 +30,6 @@ class BlogDetailView(HitCountDetailView):
         context = super(BlogDetailView, self).get_context_data(*args, **kwargs)
         context['title'] = '{}'.format(self.get_object().title)
         context['blog_category_context'] = BlogPost.objects.all()  # .distinct('category')
-        context.update({'popular_objects': BlogPost.objects.order_by('-hit_count_generic__hits')[:3], })
         return context
 
 

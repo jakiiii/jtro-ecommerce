@@ -1,0 +1,18 @@
+<div class="row card-columns">
+    {% for context in blog_featured %}
+        <div class="col-md-5 p-0">
+            <div class="card">
+                <a href="{{ context.get_absolute_url }}">
+                    <img class="card-img-top" src="{{ context.image.url }}" alt="Card image cap"
+                         style="width: 316px; height: 158px;">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title blg_w3ls">
+                        <a href="{{ context.get_absolute_url }}">{{ context.title }}</a>
+                    </h5>
+                    {#                                        <p class="card-text">{{ context.content|truncatechars:250|safe }}</p>#}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

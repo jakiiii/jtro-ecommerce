@@ -1194,10 +1194,12 @@
 </section>
 <!-- //insta posts -->
 
-<!-- sign up Modal -->
-{% include 'accounts/register.html' %}
-<!-- //signup modal -->
-<!-- signin Modal -->
-{% include 'accounts/login.html' %}
-<!-- signin Modal -->
+{% if not request.user.is_authenticated %}
+    <!-- sign up Modal -->
+    {% include 'accounts/register.html' %}
+    <!-- //signup modal -->
+    <!-- signin Modal -->
+    {% include 'accounts/login.html' %}
+    <!-- signin Modal -->
+{% endif %}
 {% endblock %}

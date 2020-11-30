@@ -45,11 +45,15 @@
         </form>
         <!-- search form -->
         <div class="nav-icon d-flex">
+            {% if request.user.is_authenticated %}
+                <a class="text-dark login_btn align-self-center mx-3" href="{% url 'profile' %}" ><i class="far fa-user"></i></a>
+            {% else %}
             <!-- sigin and sign up -->
-            <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal"
-               data-target="#myModal_btn">
-                <i class="far fa-user"></i>
-            </a>
+                <a class="text-dark login_btn align-self-center mx-3" href="#myModal_btn" data-toggle="modal"
+                   data-target="#myModal_btn">
+                    <i class="far fa-user"></i>
+                </a>
+            {% endif %}
             <!-- sigin and sign up -->
             <!-- shopping cart -->
             <div class="cart-mainf">

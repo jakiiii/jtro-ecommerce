@@ -8,7 +8,8 @@ from jtro_ecommerce.utils import unique_slug_generator
 
 class Category(models.Model):
     category_name = models.CharField(max_length=40)
-    image = models.ImageField(upload_to=upload_image_path)
+    image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
+    subcategory = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True)
     active = models.BooleanField(default=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)

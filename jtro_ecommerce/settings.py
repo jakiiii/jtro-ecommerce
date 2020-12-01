@@ -64,6 +64,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'accounts',
     'home',
+    'menu',
     'about',
     'blog',
     'category',

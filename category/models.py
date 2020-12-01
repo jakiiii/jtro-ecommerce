@@ -6,6 +6,19 @@ from .utils import upload_image_path
 from jtro_ecommerce.utils import unique_slug_generator
 
 
+class CategoryQuerySet(models.QuerySet):
+    def active(self):
+        return self.filter(active=True)
+
+
+class CategoryManager(models.Manager):
+    def get_queryset(self):
+        return CategoryQuerySet(self.model, using=self._db)
+
+    def all(self):
+        return self.get_queryset().active()
+
+
 class Category(models.Model):
     category_name = models.CharField(max_length=40)
     image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
@@ -14,6 +27,8 @@ class Category(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
     slug = models.SlugField(unique=True, blank=True)
+
+    objects = CategoryManager()
 
     def __str__(self):
         return self.category_name

@@ -10,6 +10,7 @@ from hitcount.models import HitCountMixin, HitCount
 
 from category.models import Category
 from tags.models import Tag
+from menu.models import MainMenu
 from products.models.sizes import ProductSize
 from products.models.colors import ProductColor
 from products.models.services import ProductServices
@@ -33,6 +34,8 @@ class Product(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='creator')
     product_id = models.CharField(unique=True, blank=True, max_length=10)
     title = models.CharField(max_length=250)
+    menu = models.ForeignKey(MainMenu, on_delete=models.CASCADE, related_name='product_menu')
+    submenu = models.ForeignKey(MainMenu, on_delete=models.CASCADE, related_name='product_submenu')
     description = models.TextField()
     price = models.IntegerField()
     image = models.ImageField(upload_to=upload_image_path)
